@@ -17,6 +17,7 @@ import java.util.logging.Logger;
  */
 public class Hospital extends javax.swing.JFrame {
     private JFrame frame;
+    //
     Patient patient;
 
     /**
