@@ -20,6 +20,9 @@ public class Hospital extends javax.swing.JFrame {
     //
     Patient patient;
 
+
+
+
     /**
      * Creates new form Hospital
      */
@@ -514,11 +517,36 @@ public class Hospital extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
+        String recept1 = jTextField33.getText();
+        String recept2 = jTextField34.getText();
+        String recept3 = jTextField35.getText();
+        String recept4 = jTextField36.getText();
+        String recept5 = jTextField39.getText();
+        String recept6 = jTextField40.getText();
+        String recept7 = jTextField24.getText();
+        String recept8 = jTextField27.getText();
+        String recept9 = jTextField28.getText();
+        String recept10 = jTextField30.getText();
+        String recept11 = jTextField31.getText();
+        String recept12 = jTextField32.getText();
 
+        jTextArea1.setText("");
+        jTextArea1.append("\t\n\tHospital Managment Systems\n"
+                + "\nPatient Name:\t\t" + recept10
+                + "\nPatient Passport:\t" + recept9
+                + "\n\n\n\nDate Birth:\t\t" + recept12
+                + "\nReference NO:\t\t" + recept1
+                + "\nDose(mg):\t\t" + recept2
+                + "\nNumber of Tablets:\t" + recept3
+                + "\nLOT:\t\t" + recept4
+                + "\nDaily Dose:\t\t" + recept5
+                + "\nPossible Side Effects:\t" + recept6
+                + "\nFuther Information:\t" + recept7
+                + "\nHow to Use Medication:\t" + recept8
 
+                + "\n\nDoctor:\t\t" + recept11);
 
-
-
+        String recept13 = "";
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
