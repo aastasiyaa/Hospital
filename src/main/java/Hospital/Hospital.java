@@ -523,6 +523,7 @@ public class Hospital extends javax.swing.JFrame {
         String recept4 = jTextField36.getText();
         String recept5 = jTextField39.getText();
         String recept6 = jTextField40.getText();
+
         String recept7 = jTextField24.getText();
         String recept8 = jTextField27.getText();
         String recept9 = jTextField28.getText();
