@@ -277,6 +277,11 @@ public class Hospital extends javax.swing.JFrame {
 
         jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Make a Selection", "Ibuprofen", "No-shpa", "Ketarol", "Paracetamol" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 240, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -340,7 +345,7 @@ public class Hospital extends javax.swing.JFrame {
         getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 480, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel21.setText("Patient Address:");
+        jLabel21.setText("Doctor:");
         getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, -1, -1));
 
         jTextField24.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -508,6 +513,71 @@ public class Hospital extends javax.swing.JFrame {
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+        if (jComboBox2.getSelectedItem().equals("Ibuprofen")){
+            jTextField33.setText("5671235");
+            jTextField34.setText("15");
+            jTextField35.setText("23");
+            jTextField36.setText("3");
+            jTextField37.setText("28/05/2022");
+            jTextField38.setText("28/05/2023");
+            jTextField39.setText("3");
+            jTextField40.setText("Allergy, rash");
+            jTextField24.setText("Don't take pregnant");
+            jTextField25.setText("2 to 15 degrees");
+            jTextField26.setText("NO");
+            jTextField27.setText("Inside");
+            jTextField31.setText("Bragin Oleg Mikhailovich");
+        }
+        else if (jComboBox2.getSelectedItem().equals("No-shpa")){
+            jTextField33.setText("9284292");
+            jTextField34.setText("20");
+            jTextField35.setText("45");
+            jTextField36.setText("2");
+            jTextField37.setText("19/04/2022");
+            jTextField38.setText("19/04/2023");
+            jTextField39.setText("5");
+            jTextField40.setText("Allergy, rash");
+            jTextField24.setText("Don't take pregnant");
+            jTextField25.setText("-15 to 0 degrees");
+            jTextField26.setText("YES");
+            jTextField27.setText("Inside");
+            jTextField31.setText("Bragin Oleg Mikhailovich");
+        }
+        else if (jComboBox2.getSelectedItem().equals("Ketarol")){
+            jTextField33.setText("174993");
+            jTextField34.setText("50");
+            jTextField35.setText("23");
+            jTextField36.setText("5");
+            jTextField37.setText("10/01/2022");
+            jTextField38.setText("10/01/2023");
+            jTextField39.setText("6");
+            jTextField40.setText("Allergy, rash");
+            jTextField24.setText("Don't take pregnant");
+            jTextField25.setText("-15 to 0 degrees");
+            jTextField26.setText("YES");
+            jTextField27.setText("Inside");
+            jTextField31.setText("Bragin Oleg Mikhailovich");
+        }
+        else if (jComboBox2.getSelectedItem().equals("Make a Selection")){
+            jTextField33.setText("");
+            jTextField34.setText("");
+            jTextField35.setText("");
+            jTextField36.setText("");
+            jTextField37.setText("");
+            jTextField38.setText("");
+            jTextField39.setText("");
+            jTextField40.setText("");
+            jTextField24.setText("");
+            jTextField25.setText("");
+            jTextField26.setText("");
+            jTextField27.setText("");
+            jTextField31.setText("");
+        }
+        
+    }//GEN-LAST:event_jComboBox2ActionPerformed
 
     /**
      * @param args the command line arguments
