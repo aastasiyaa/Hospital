@@ -4,8 +4,11 @@
  */
 package Hospital;
 
+import Login.Login;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 import java.awt.print.PrinterException;
 import java.util.logging.Level;
@@ -47,10 +50,7 @@ public class Hospital extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
@@ -152,6 +152,11 @@ public class Hospital extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton1.setText("Update");
         jButton1.setToolTipText("");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton2.setText("Delete");
@@ -161,17 +166,13 @@ public class Hospital extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jButton3.setText("Doctor");
-
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton4.setText("Reset");
-
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jButton5.setText("Patient");
-
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jButton6.setText("GP Appointment");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton7.setText("Print");
@@ -183,6 +184,11 @@ public class Hospital extends javax.swing.JFrame {
 
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton8.setText("Login");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton9.setText("Prescription");
@@ -206,25 +212,19 @@ public class Hospital extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
         jPanel5Layout.setVerticalGroup(
@@ -237,12 +237,9 @@ public class Hospital extends javax.swing.JFrame {
                     .addComponent(jButton8)
                     .addComponent(jButton7)
                     .addComponent(jButton10)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton2)
+                    .addComponent(jButton4))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, 1380, 80));
@@ -493,6 +490,21 @@ public class Hospital extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        if (jTable1.getSelectedRow() == -1){
+            if (jTable1.getRowCount() == 0){
+                JOptionPane.showMessageDialog(null, "No data to delete"
+                        , "Hospital Managment Systems", JOptionPane.OK_OPTION);
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Select a row to delete"
+                        , "Hospital Managment Systems", JOptionPane.OK_OPTION);
+            }
+        }
+        else {
+            model.removeRow(jTable1.getSelectedRow());
+        }
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -530,13 +542,28 @@ public class Hospital extends javax.swing.JFrame {
         String recept10 = jTextField30.getText();
         String recept11 = jTextField31.getText();
         String recept12 = jTextField32.getText();
+        String recept13 = "";
+
+        if(jComboBox2.getSelectedItem().equals("Ibuprofen")){
+            recept13 = "Ibuprofen";
+        }
+        else if(jComboBox2.getSelectedItem().equals("No-shpa")){
+            recept13 = "No-shpa";
+        }
+        else if(jComboBox2.getSelectedItem().equals("Ketarol")){
+            recept13 = "Ketarol";
+        }
+        else if(jComboBox2.getSelectedItem().equals("Paracetamol")){
+            recept13 = "Paracetamol";
+        }
 
         jTextArea1.setText("");
         jTextArea1.append("\t\n\tHospital Managment Systems\n"
                 + "\nPatient Name:\t\t" + recept10
                 + "\nPatient Passport:\t" + recept9
-                + "\n\n\n\nDate Birth:\t\t" + recept12
-                + "\nReference NO:\t\t" + recept1
+                + "\nDate Birth:\t\t" + recept12
+                + "\nPrescription:\t" + recept13
+                + "\n\n\n\nReference NO:\t\t" + recept1
                 + "\nDose(mg):\t\t" + recept2
                 + "\nNumber of Tablets:\t" + recept3
                 + "\nLOT:\t\t" + recept4
@@ -544,16 +571,20 @@ public class Hospital extends javax.swing.JFrame {
                 + "\nPossible Side Effects:\t" + recept6
                 + "\nFuther Information:\t" + recept7
                 + "\nHow to Use Medication:\t" + recept8
+                + "\n\nDoctor:\t\t" + recept11
+                + "\n\nDate:\t\t_____________\n\n"
+                + "\t\tDoctor's signature");
 
-                + "\n\nDoctor:\t\t" + recept11);
 
-        String recept13 = "";
+
+
+
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
         if (jComboBox2.getSelectedItem().equals("Ibuprofen")){
-            jTextField33.setText("5671235");
+            jTextField33.setText("C3454KT235");
             jTextField34.setText("15");
             jTextField35.setText("23");
             jTextField36.setText("3");
@@ -611,9 +642,57 @@ public class Hospital extends javax.swing.JFrame {
             jTextField26.setText("");
             jTextField27.setText("");
             jTextField31.setText("");
+            jTextField28.setText("");
+            jTextField29.setText("");
+            jTextField30.setText("");
+            jTextField32.setText("");
+
         }
         
     }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        jTextField33.setText("");
+        jTextField34.setText("");
+        jTextField35.setText("");
+        jTextField36.setText("");
+        jTextField37.setText("");
+        jTextField38.setText("");
+        jTextField39.setText("");
+        jTextField40.setText("");
+        jTextField24.setText("");
+        jTextField25.setText("");
+        jTextField26.setText("");
+        jTextField27.setText("");
+        jTextField31.setText("");
+        jTextField28.setText("");
+        jTextField29.setText("");
+        jTextField30.setText("");
+        jTextField32.setText("");
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        Login login = new Login();
+        login.setVisible(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[] {jComboBox2.getSelectedItem().toString(),
+        jTextField33.getText(), jTextField34.getText(),
+        jTextField35.getText(), jTextField36.getText(),
+        jTextField37.getText(), jTextField38.getText(),
+        jTextField39.getText(), jTextField40.getText(),
+        jTextField24.getText(), jTextField25.getText(),
+        jTextField26.getText(), jTextField27.getText(),
+        jTextField28.getText(), jTextField29.getText(),
+        jTextField30.getText(), jTextField32.getText(),
+        jTextField31.getText()});
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -654,10 +733,7 @@ public class Hospital extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
